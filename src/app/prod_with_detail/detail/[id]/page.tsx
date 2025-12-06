@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import prods from '../../prods';
+import Child from '@/components/Child/Child';
 
 export default async function DetailProd({params}: {params: Promise<{id: number}>}) {
   const {id} = await params;
@@ -15,6 +16,8 @@ export default async function DetailProd({params}: {params: Promise<{id: number}
       <p>{detailProd.desc}</p>
       <p>{detailProd.cost}</p>
 
+
+      <Child text='boba' />
     </div>
   )
 }
