@@ -25,8 +25,8 @@ export default function RootLayout({
           {children}
         </main>
         <section>
-          {infopost}
-          {infouser}
+          {/* {infopost} */}
+          {/* {infouser} */}
         </section>
         <Footer />
       </body>
