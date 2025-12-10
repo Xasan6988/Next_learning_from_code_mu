@@ -7,7 +7,22 @@ const users = {
 	4: 'user4',
 	5: 'user5',
 };
-export default async function Page({params}: {params: Promise<{id: keyof typeof users}>}) {
+
+interface IUserParams {
+	params: Promise<{id: keyof typeof users}>
+}
+
+
+export const generateMetadata = async ({params}: IUserParams) => {
+	const {id} = await params;
+
+	return {
+		title: `User ${id}`,
+		description: `User ${id} description`,
+	}
+}
+
+export default async function Page({params}: IUserParams) {
   const {id} = await params;
 
   const user = users?.[id];
